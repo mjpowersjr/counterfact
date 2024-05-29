@@ -96,6 +96,7 @@ export async function counterfact(config: Config) {
       await moduleLoader.load();
       await moduleLoader.watch();
       const server = koaApp.listen({
+        host: config.host,
         port: config.port,
       });
 

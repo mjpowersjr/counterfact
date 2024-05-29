@@ -35,6 +35,7 @@ Arguments:
   destination           path to generated code (default: ".")
 
 Options:
+  --host <string>       server host interface (default: localhost)
   --port <number>       server port number (default: 3100)
   --swagger             include swagger-ui
   -o, --open            open a browser

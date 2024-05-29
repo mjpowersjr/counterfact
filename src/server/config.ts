@@ -4,6 +4,7 @@ export interface Config {
     routes: boolean;
     types: boolean;
   };
+  host: string;
   openApiPath: string;
   port: number;
   proxyPaths: Map<string, boolean>;

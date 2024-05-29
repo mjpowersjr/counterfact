@@ -31,6 +31,7 @@ const taglinesFile = await readFile(
 
 const taglines = taglinesFile.split("\n").slice(0, -1);
 
+const DEFAULT_HOST = "localhost";
 const DEFAULT_PORT = 3100;
 
 const debug = createDebug("counterfact:bin:counterfact");
@@ -125,7 +126,7 @@ async function main(source, destination) {
 
   const openBrowser = options.open;
 
-  const url = `http://localhost:${options.port}`;
+  const url = `http://${options.host}:${options.port}`;
 
   const guiUrl = `${url}/counterfact/`;
 
@@ -218,6 +219,7 @@ program
     "_",
   )
   .argument("[destination]", "path to generated code", ".")
+  .option("-h, --host <string>", "server host interface", DEFAULT_HOST)
   .option("-p, --port <number>", "server port number", DEFAULT_PORT)
   .option("--swagger", "include swagger-ui")
   .option("-o, --open", "open a browser")
