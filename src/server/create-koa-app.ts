@@ -1,5 +1,7 @@
 import { pathToFileURL } from "node:url";
 
+// eslint-disable-next-line import/no-extraneous-dependencies
+import cors from "@koa/cors";
 import createDebug from "debug";
 import Koa from "koa";
 import bodyParser from "koa-bodyparser";
@@ -79,6 +81,8 @@ export function createKoaApp(
   );
 
   app.use(bodyParser());
+
+  app.use(cors());
 
   app.use(koaMiddleware);
 
